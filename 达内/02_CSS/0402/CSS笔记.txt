@@ -1,0 +1,64 @@
+CSS样式
+	CSS=层叠样式表，样式表，样式……
+	作用：制作页面的样式，实现结构与表现相分离
+
+定义方式：
+	1、内联  <p style="color:red;">这是红字</p>
+	2、内部  <head>
+				<style>....样式表内容...</style>
+		       </head>
+	3、外部  独立的CSS文件，用<link />标记链接到html
+
+选择器：
+	1、元素选择器（标签选择器）：定义HTML标签样式
+	2、类选择器：定义一个类样式，.myName  
+	      调用方式：<p class="myName"></p>
+	      可反复多次使用，每个元素可调用多个class
+	3、ID选择器：定义一个ID样式  #myID
+	      调用方式：<p id="myID"></p>
+	      只能在一个页面中使用一次，每个元素只能调用一个ID
+	4、复合选择器：
+	   （1）元素+类/ID：  p.myClass   p#myID
+	   （2）子集选择器：div p   指定div里所有的p标签样式
+	   （3）直接子集：div>p  指定div里直接嵌套的p标签样式
+	   （4）并列：.class1, .class2, .class3.....  
+	            多个选择器样式一致时，可写在一起，用逗号分隔
+	5、伪类选择器：
+	    （1）链接伪类选择器：  :link、:visited
+	    （2）动态伪类选择器：  :hover、:active、:focus
+
+单位：
+	长度单位：cm、mm、in、px、pt、em、%
+
+宽度与高度
+	1、width：宽    height：高
+	2、max-width/height：最大宽度/高度
+	      min-width/height：最小宽度/高度
+	      *当width与min-width同时定义时，最大的起作用
+	3、overflow：溢出内容的处理
+		  hidden  隐藏溢出
+		  visible  显示溢出（默认）
+		  auto  自动调整
+		  scroll  总显示滚动条
+	      overflow-x：横向溢出
+	      overflow-y：纵向溢出
+
+边框
+	1、边框属性：
+		border: width style color；
+		border-left、border-right……
+		border-width、border-style、border-color
+		border-style:none;  边框不显示并且不占宽高
+		border-color:transparent; 边框不显示但占宽高
+	2、边框倒角
+		border-radius
+		border-radius-top-left、border-radius-top-right
+		……
+		border-radius:10px;   表示四个角均为10像素圆角
+		border-radius:10px 20px;  
+		   表示对角线对称，左上与右下为10，右上与左下为20
+		border-radius:10px 20px 30px 40px
+		   表示顺时针顺序分别定义四个角的圆角。
+
+
+
