@@ -1,0 +1,71 @@
+一、CSS 概述
+	a、css 的作用---实现内容和表现的分离，。。。
+<p  align="center">文本</p>---html的样式属性---建议废弃
+<p class="sss" style="color:#ddd;">文本</p>----CSS
+<p class="a b"
+	b、CSS 使用方式：内联、内部、外部（建议）
+	c、优先级：不同的样式表方式、选择器
+	d、选择器：通用、元素、类（.ss/p.ss/多类）、id、伪类、后代、群组-----范围越小的，优先级高；优先级相同的情况下，后定义的优先
+	e、!important
+
+二、尺寸和边框
+	widht/height：对于行内元素无效  a
+		<a href="#">联系我们</a>---大小随着内容自适应
+	overflow：溢出
+
+三、背景：
+	background-color/background-image/position/repeat
+
+四：框模型
+	magin:外边距   --->margin:0px auto;实现左右居中---块级元素
+	padding:内边距
+	页面默认情况下：采用流布局（从上到下，块级；每行中，从左到右），margin-right/bottom 有些时候无效
+		background-image:url("a b.jpg");
+
+五、文本格式化
+	字体属性
+	1、font-size
+	2、font-weight:normal/bold;
+	3、font-family:"microsoft yahei",times,arial;--->指定字型，用逗号，指定替换的字型
+	4、font-style : normal/italic;
+	文本属性
+	1、text-decoration:none/underline;
+	2、text-align:;---->有地方，才有效（块级）
+	3、color
+	4、line-height：行高，设置文本行的高度，便于阅读，额外设置垂直方向上居中（小心溢出）
+	5、text-indent：首行文本缩进（如果有些元素只能是单行，比如input，使用它）
+	6、text-shadow
+	7、其他：关于长英文单词的换行、文本溢出、空白处理----了解
+
+六、表格
+	1、应用表格：网格数据显示；简单布局上
+	2、常用样式：边框、背景、文本格式化等
+	3、特有的样式
+		vertical-align：--->垂直对齐----》设置给 td
+		border-collapse:separate/collapse;--->边框合并：表格的外边框和单元格的边框合并，形成单线的表格---->这个属性设置给 table，整个表格
+		border-spacing:value;---->设置边框与边框间距；当 border-collpase:collapse 时，此属性无效
+		caption-side：top/bottom；
+		table-layout:auto/fixed;--->显示性能相关；复杂表格建议使用 fixed，加速表格的显示
+
+七：浮动
+	1、定位：默认流布局定位，所有元素都位于同一层，块级元素从上向下；行内元素从左向右
+	2、改变定位方式：浮动、相对定位、绝对定位、固定定位
+	3、浮动：适合于解决将多个框位于同一行
+	4、如何设置浮动：float:left/right/none;
+	5、元素都可以设置浮动：如果是行内元素，设置浮动后，变为块级元素
+	6、设置了元素的浮动，会对邻近的元素带来影响（因为改变了原有的布局模式）
+		-------clear: left/right/both;--->清除周围浮动元素所带来的影响（自己使用原有的布局）
+	7、
+
+
+
+
+
+
+
+
+	
+
+
+
+
