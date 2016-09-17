@@ -1,0 +1,113 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>登录</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />   
+        <link type="text/css" rel="Stylesheet" href="login.css" /> 
+        <style>
+            .data
+            {
+                color:black;
+                font-size:10pt;
+                border:1px solid gray;
+                border-radius:5px;
+                padding:3px;
+                box-shadow:5px 5px #ccc;
+                background-color:#fff;
+            }
+            .data>div
+            {
+                margin-bottom:5px;
+                border-bottom:1px dotted gray;
+                padding:5px;
+            }
+            table,td
+            {
+                border:1px solid black;
+                border-collapse:collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <header style="border:1px solid gray;">
+            <img src="images/jd_logo.png" />
+            <img  src="images/welcome.png" class="welcome"/>
+	        <div class="data" style="float:right;margin-right:20px;">
+                宽: 990px; 上下内边距 10px; 
+                <br />
+                图片与文字之间分隔线的颜色为 #ccc
+            </div>
+        </header>
+	<div style="position:absolute;top:50px;" class="data">
+		body背景色: #f2f2f2; <br />	字体颜色: #333; <br />字号:12px;	
+	</div>
+    <div style="position:absolute;top:120px;left:400px;" class="data">
+		内容区域背景色: #e8e8e8; 圆角: 3px; 内边距: 5px; 上下外边距 60px; 宽:860px;   
+	</div>
+    
+	<div class="data" style="position:absolute; left:120px; 	top:300px;">
+		表格边框颜色：#e1e1e1;<br/>
+		背景色：#ffffff;<br/>
+		单元格高：22px;
+	</div>
+	<div class="data" style="border:1px solid blue;position:absolute; right:20px; top:200px;width:250px;">
+		<div>"邮箱"、"密码" 行：高 64px 宽320px</div>
+		<div>"忘记密码" 行：高 75px;</div>
+		<div>按钮行：高 52px;</div>
+		<div>表格中的文本颜色：#999;</div>
+        <div>文本框：宽 282px; 高 24px; 边框颜色 #ccc; 字体 14px; 上边距 7px; 内边距: 4px,20px,4px,3px;</div>
+		<div>登录按钮：宽 307px; 高 34px;背景图像位置 0,-61px; 鼠标悬停时：背景图像位置 0,-95px;</div>
+        <div>注册按钮：字体 14px; 背景色 #7cbe56; 宽 115px; 高 32px; 鼠标悬停时： 背景色: #89c964;</div>
+	</div>
+	 
+
+        <section>
+            <table>
+                <tr>
+                    <td rowspan="7">
+                        <img src="Images/jd_show.png" />
+                    </td>
+                    <td class="info">
+                        <span>邮箱/用户名/已验证手机</span>
+                        <br />
+                        <input type="text" class="txt_username" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">
+                        <span>密码</span>
+                        <br />
+                        <input type="text" class="txt_pwd" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="selection">
+                        <input type="checkbox" id="chkAuto" /><label for="chkAuto">自动登录</label>
+                        <input type="checkbox" id="chkSafe" /><label for="chkSafe">安全控件登录</label>
+                        <input type="checkbox" id="chkFindPwd" /><label for="chkFindPwd"><a href="#">忘记密码?</a></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="button">
+                        <input type="button" class="btn_login" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>使用合作网站账号登录京东：</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">网银钱包</a>
+                        <a href="#">QQ</a>
+                        <a href="#">其他</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <input type="button" value="免费注册>>" class="btn_register" />
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</html>

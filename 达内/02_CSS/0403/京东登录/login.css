@@ -1,0 +1,97 @@
+body
+{
+    background: #f2f2f2;
+    color: #333;
+    font-size: 12px;
+}
+/*头部*/
+header
+{
+    width: 990px;
+    padding:10px 0px;
+    margin: 0 auto;
+}
+img.welcome
+{
+    border-left:1px solid #ccc;
+}
+/*主要内容*/
+section
+{
+    background: #e8e8e8;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 60px auto;
+    width:860px;
+}
+/*表格*/
+section table
+{
+    border: 1px solid #e1e1e1;
+    background: #ffffff;
+}
+td
+{
+    height:22px;
+}
+td.info
+{
+    width: 320px;
+    height:64px;
+}
+td.selection
+{
+    height:75px;
+}
+td.button
+{
+    height:52px;
+}
+/*表格中的文本和输入框*/
+td span
+{
+    color: #999;
+    margin-top: 1px;
+}
+input.txt_username,input.txt_pwd
+{
+    width: 282px;
+    height: 24px;
+    padding: 4px 20px 4px 3px;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+    margin-top:7px;
+}
+input.txt_username
+{
+    background: url(images/user.png) no-repeat right center;
+}
+input.txt_pwd
+{
+    background: url(images/pwd.png) no-repeat right center;
+}
+input.btn_login
+{
+    width: 307px;
+    height: 34px;
+    background: url(images/login_all_bg.png) no-repeat 0 -61px;
+    overflow: hidden;
+    border:none;
+}
+input.btn_login:hover
+{
+    background-position: 0 -95px;
+}
+input.btn_register
+{
+    font-size: 14px;
+    background-color: #7cbe56;
+    width: 115px;
+    height: 32px;
+    color:#fff;
+    border:none;
+}
+input.btn_register:hover
+{
+    background-color: #89c964;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ </head>
+ <style type="text/css">
+  *{
+	margin:0;padding:0;
+  }
+  body{
+	background:#f2f2f2;
+	color:#333;
+	font-size:12px;
+  }
+  #top_bar_box{
+	width:990px;
+	height:60px;
+	padding:10px 0;
+	margin:0 auto;
+	background:url(jd_logo.png) no-repeat left center;
+	line-height:40px;
+  }
+  #top_bar_box #welcome{
+	width:100%;
+	margin-left:170px;
+	padding:10px 5px;
+  }
+  #top_bar_box #welcome span{
+	border-left:1px solid #ccc;
+	padding:10px 10px;
+  }
+  #content{
+	width:860px;
+	height:403px;
+	margin:60px auto;
+	background-color:#e8e8e8;
+	border-radius:3px;
+	padding:5px;
+  }
+  #left{
+	width:511px;
+	height:100%;
+	background:url(jd_show.png) no-repeat;
+	float:left;
+  }
+  #right{
+	width:320px;
+	height:100%;
+	color:#999;
+	float:left;
+	background-color:#fff;
+  }
+  .account_msg{
+	height:64px;
+	width:320px;
+  }
+  input#user{
+	height:24px;
+	width:282px;
+	border:1px solid #ccc;
+	font-size:14px;
+	margin-top:7px;
+	padding:4px 20px 4px 3px;
+	background:url(user.png) no-repeat right;
+  }
+  input#pwd{
+	height:24px;
+	width:282px;
+	border:1px solid #ccc;
+	font-size:14px;
+	margin-top:7px;
+	padding:4px 20px 4px 3px;
+	background:url(pwd.png) no-repeat right;
+  }
+  .account_msg p.title{
+	margin-top:13px;
+  }
+  #forget_pwd{
+	line-height:85px;
+	color:#000;
+  }
+  span.check{
+	margin-left:5px;
+  }
+  #login_btn{
+	height:62px;
+  }
+  #login_btn #btn{
+	width:307px;
+	height:34px;
+	margin:9px 0px;
+	background:url(login_all_bg.png) no-repeat 0 -61px;
+  }
+  #login_btn #btn:hover{
+	width:307px;
+	height:34px;
+	background:url(login_all_bg.png) no-repeat 0 -95px;
+  }
+  #other_acconut_txt,#other_acconut{
+	margin-top:15px;
+  }
+  #free_logon{
+	margin-top:8px;
+	font-size:14px;
+	background:#7cbe56;
+	width:115px;
+	height:32px;
+	color:#fff;
+	float:right;
+	margin-right:15px;
+  }
+ </style>
+ <body>
+  <div id="top_bar_box">
+	<h1 id="welcome"><span>欢迎登录</span></h1>
+  </div>
+  <div id="content">
+	  <div id="left"></div>
+	  <div id="right">
+		<div class="account_msg">
+			<p class="title">邮箱/用户名/已验证手机</p>
+			<input id="user"/>
+		</div>
+		<div class="account_msg">
+			<p class="title">密码</p>
+			<input id="pwd"/>
+		</div>
+		<div id="forget_pwd">
+			<input name="forget_checkbox" type="checkbox" value="自动登录"><span class="check">自动登录</span>
+			<input name="forget_checkbox" type="checkbox" value="安全控件登录"><span class="check">安全控件登录</span>
+			<input name="forget_checkbox" type="checkbox" value="忘记密码?"><span class="check"><a href="#">忘记密码?</a></span>
+		</div>
+		<div id="login_btn">
+			<p><input type="button" value="" id="btn"></p>
+		</div>
+		<div id="other_acconut_txt">使用合作网站账号登录京东：</div>
+		<div id="other_acconut">
+			<a href="#">网银钱包</a>
+			<a href="#">QQ</a>
+			<a href="#">其他</a>
+		</div>
+		<div><input type="button" value="免费注册>>" id="free_logon"></div>
+	  </div>
+  </div>
+ </body>
+</html>
