@@ -44,12 +44,13 @@
 	#country{
 		width:100px;
 	}
-	#phone,#re_phone,#yanzheng{
+	#phone,#re_phone,#yanzheng,#yan_phone{
 		background:#ededed;
 		color:#999;
 		border:1px solid #dedede;
 	}
 	#register_box img{
+		vertical-align:middle;
 	}
 	li a{
 		color:#ff3f13;
@@ -60,6 +61,9 @@
 		color:#fff;
 		width:100px;
 		height:40px;
+	}
+	span{
+		color:red;
 	}
   </style>
  </head>
@@ -74,16 +78,16 @@
 		<li>所在国家/地区&nbsp;<input id="country" type="text" value="中国大陆">
 		</li>
 		<li>手机号码&nbsp;<input id="phone" type="text" value="+86">
-			<img src="info.JPG">手机号码格式不正确，请重新输入
+			<img src="info.JPG"><span>手机号码格式不正确，请重新输入</span>
 		</li>
 		<li>手机号码&nbsp;<input id="re_phone" type="text" value="+86">
 			<img src="ok.JPG">
 		</li>
 		<li>手机号码&nbsp;<input id="yan_phone" type="text" value="+86">
-			<img src="error.JPG">手机号码格式不正确，请重新输入
+			<img src="error.JPG"><span>手机号码格式不正确，请重新输入</span>
 		</li>
 		<li>&nbsp;验证码&nbsp;<input id="yan" type="text" value="">
-			<img src="vali_code.jpg"><img src="error.JPG">手机号码格式不正确，请重新输入
+			<img src="vali_code.jpg"><img src="error.JPG"><span>手机号码格式不正确，请重新输入</span>
 		</li>
 		<li>&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">同意<a href="#"><<淘宝账号协议>></a></li>
 		<li>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="下一步" id="next"></li>
