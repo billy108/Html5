@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="day04.css" type="text/css" rel="stylesheet" />
+		<style type="text/css">
+			input[type="text"]{
+				color:#00f;
+			}
+			input:disabled{
+				border:1px solid #000;
+			}
+			:target{
+				color:#0f0;
+			}
+			#p1:target{
+				background:#f00;
+			}
+			::selection{
+				color:red;
+			}
+			a:before{
+				content:"第"counter(abc) url("star_focus.png")"个";
+			}
+			a{
+				counter-increment:abc 2;
+			}
+			body{
+				counter-reset:abc 2;
+			}
+			#d4{
+				border:1px solid #000;
+				width:300px;
+				height:300px;
+				column-count:3;
+			}
+			#d5{
+				width:200px;
+				height:200px;
+				border:1px solid black;
+				background:#ddd;
+				margin-top:20px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div style="background-color:#999;">
+			<div id="d5"></div>
+		</div>
+		<div id="d4">
+			点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1点击1
+		</div>
+		<a href="#link">点击1</a><br/>
+		<a href="#p1">点击2</a><br/>
+		<input type="text" value="aaa"/>
+		<input type="text" value="bbb" disabled="disabled"/>
+		<input type="button" value="ccc" />
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<a name="link">第一个位置</a>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<p id="p1">第二个位置</p>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</body>
+</html>

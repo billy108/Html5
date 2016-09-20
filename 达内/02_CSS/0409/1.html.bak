@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="day04.css" type="text/css" rel="stylesheet" />
+		<style type="text/css">
+			input[type="text"]{
+				color:#00f;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" value="aaa"/>
+		<input type="text" value="bbb" disabled="disabled"/>
+		<input type="button" value="ccc" />
+	</body>
+</html>
