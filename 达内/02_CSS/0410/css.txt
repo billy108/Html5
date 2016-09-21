@@ -1,0 +1,276 @@
+一、CSS 概述
+	a、css 的作用---实现内容和表现的分离，。。。
+<p  align="center">文本</p>---html的样式属性---建议废弃
+<p class="sss" style="color:#ddd;">文本</p>----CSS
+<p class="a b"
+	b、CSS 使用方式：内联、内部、外部（建议）
+	c、优先级：不同的样式表方式、选择器
+	d、选择器：通用、元素、类（.ss/p.ss/多类）、id、伪类、后代、群组-----范围越小的，优先级高；优先级相同的情况下，后定义的优先
+	e、!important
+
+二、尺寸和边框
+	widht/height：对于行内元素无效  a
+		<a href="#">联系我们</a>---大小随着内容自适应
+	overflow：溢出
+
+三、背景：
+	background-color/background-image/position/repeat
+
+四：框模型
+	magin:外边距   --->margin:0px auto;实现左右居中---块级元素
+	padding:内边距
+	页面默认情况下：采用流布局（从上到下，块级；每行中，从左到右），margin-right/bottom 有些时候无效
+		background-image:url("a b.jpg");
+
+五、文本格式化
+	字体属性
+	1、font-size
+	2、font-weight:normal/bold;
+	3、font-family:"microsoft yahei",times,arial;--->指定字型，用逗号，指定替换的字型
+	4、font-style : normal/italic;
+	文本属性
+	1、text-decoration:none/underline;
+	2、text-align:;---->有地方，才有效（块级）
+	3、color
+	4、line-height：行高，设置文本行的高度，便于阅读，额外设置垂直方向上居中（小心溢出）
+	5、text-indent：首行文本缩进（如果有些元素只能是单行，比如input，使用它）
+	6、text-shadow
+	7、其他：关于长英文单词的换行、文本溢出、空白处理----了解
+
+六、表格
+	1、应用表格：网格数据显示；简单布局上
+	2、常用样式：边框、背景、文本格式化等
+	3、特有的样式
+		vertical-align：--->垂直对齐----》设置给 td
+		border-collapse:separate/collapse;--->边框合并：表格的外边框和单元格的边框合并，形成单线的表格---->这个属性设置给 table，整个表格
+		border-spacing:value;---->设置边框与边框间距；当 border-collpase:collapse 时，此属性无效
+		caption-side：top/bottom；
+		table-layout:auto/fixed;--->显示性能相关；复杂表格建议使用 fixed，加速表格的显示
+
+七：浮动
+	1、定位：默认流布局定位，所有元素都位于同一层，块级元素从上向下；行内元素从左向右
+	2、改变定位方式：浮动、相对定位、绝对定位、固定定位
+	3、浮动：适合于解决将多个框位于同一行
+	4、如何设置浮动：float:left/right/none;
+	5、元素都可以设置浮动：如果是行内元素，设置浮动后，变为块级元素
+	6、设置了元素的浮动，会对邻近的元素带来影响（因为改变了原有的布局模式）
+		-------clear: left/right/both;--->清除周围浮动元素所带来的影响（自己使用原有的布局）
+	7、float与overflow：包含框没有设置高度，其中的子元素浮动，包含框没有自适应的高度；如果希望保持高度，对包含框添加 overflow或者height
+
+八：显示
+	1、display：改变元素框的显示方式，比如可以改为none/inline/block/inline-block
+		---界面上显示小图标（作图时，拼成一个大图），用背景的方式
+			a、padding构成大小
+			b、block或者 inline-block两种，设置大小
+
+	2、visibility：visible/hidden；
+		----两种方式都可以让元素不可见，区别？？（是否保留空间）
+	3、opacity：设置元素的不透明度（0不可见，1正常）
+		----常用于实现页面的遮罩效果
+	4、cursor：光标，常用的取值 pointer，提示用户有可以的操作
+	5、vertical-align:default/top/bottom/middle;
+		a、应用在表格中
+		b、应用在行内块级元素
+
+九：列表
+	1、列表的作用：显示一系列相关的数据，常用于 导航菜单项、页签、数据列表
+	2、列表的常用样式：之前的那些（文本、背景、边框、边距、浮动等）
+	3、列表特有的样式
+		list-style-type：none/disc/circle/square/....
+		list-style-image: url();  --->使用图片作为列表项前面的标识符
+		list-style-position:;---->标识符的位置
+	list-style-type:none;
+	list-style:none url() inside/outside;
+
+十：定位
+	1、改变元素原有的位置（改变默认的流布局模式---元素的位置由写在 HTML 文档里决定）
+	2、定位方式：浮动、相对定位、绝对定位、固定定位
+	3、有哪些定位属性
+		position:static/relative/absolute/fixed;	--->改变了布局模式
+		位置偏移属性：top/left/right/bottom:value;  ---->位置
+		z-index:value;  ---->层次（堆叠顺序）	
+	4、什么是相对定位
+		设置元素的 position 属性为 relative，使用偏移属性设置位置，相对于元素原有的位置进行偏移----》元素的原有空间仍然保留---适用于a、移动距离小的情况  b、配合子元素实现子元素的绝对定位
+	5、什么是绝对定位
+		设置元素的 position 属性为 absolute，使用偏移属性设置位置，元素相对于  已定位的 最近的 祖先元素----》元素原有的空间不做保留-----适用于为页面制作大的堆叠框 
+	6、什么是固定定位
+		设置元素的 position 属性为 fixed，使用偏移属性和堆叠顺序设置----》元素原有的空间不做保留，相对于窗口进行定位
+
+后代选择、子代选择	
+#menu>li  {float:left;}
+#menu li
+
+<ul id="menu">
+	<li>
+		<ul>
+			<li></li>
+		</ul>
+	</li>
+</ul>
+
+十一、复杂选择器
+	1、兄弟选择器
+		通用：aaa~bbb---》aaa后面的所有 bbb
+		相邻：aaa+bbb--->aaa后面，紧挨着的bbb
+
+	2、属性选择器：根据元素的属性
+		语法：    [属性名称] ---->  [class]
+		衍生
+			p[属性名称]
+			p[属性名称=“值”]
+input[type="text"]
+input[type="button"]
+			~  ^ $  *
+
+	3、伪类选择器
+		a、状态伪类：根据元素选择合适的状态
+			:hover   :active（激活的）  :link  :visited   :focus（获得焦点）
+			:enabled（可用的）  :disabled（禁用）  :checked（选中状态）
+		b、结构伪类	:first-child :last-child  :empty :only-child
+
+		c、否定伪类	not(选择器)
+
+		b、目标伪类
+			有元素被作为导航的目标，为其定义样式（锚点<a name="aa"></a>、为元素 设置 id 属性 ）
+			???:target{...}
+			-----元素的 name 属性和 id 属性的区别
+url?id=390859038905384958
+		
+	4、伪元素选择器
+		::selection{}----选中的文本的样式
+		:first-letter---首字母
+		:first-line---首行
+
+十二：内容生成
+	1、什么是内容生成：结合伪元素选择器 :before :after 和 content 属性，为页面添加文本、图像；再结合计数器，为页面添加动态的数字
+
+	2、伪元素选择器 :before /  :after ---->  ???:before
+
+	3、content 属性：内容属性，将文本、计数器、url 赋值
+			content:"Wenben";
+			content:url("url");
+			content: counter(计数器的名称);
+	
+	4、计数器
+		a、定义		counter-reset:name number;---在 body 里定义
+		b、使用		counter(name)
+		c、增加		counter-increment:name number;
+
+十三：多列属性
+	1、column-count:设置列数
+	2、column-gap：间隔
+	3、column-rule：分割线的样式
+	4、浏览器兼容性
+		属性一样，显示效果不同
+		添加前缀：   -o-   -moz-   -webkit-
+			column-count:3;
+			-webkit-column-count:3;				
+		针对不同的浏览器，编写不同的 CSS
+
+十四：浏览器兼容性
+	1、特定的问题：与 盒子模型 相关
+		a、各种默认效果：边距、input 元素
+			html,body,p,ul,li,... {margin:0;padding:0;}
+			input {outline:none;}
+		b、块级元素水平方向居中显示
+			margin:0px auto;
+		         ie低版本：为元素添加一个父元素，设置父元素的 text-align:center；会导致元素中文本位置发生变化，对元素单独设置 text-align:left
+		c、overflow 属性的使用
+			结合 float （并非浏览器兼容问题，常见）
+			ie 低版本中，包含框默认会显示所有的内容，撑开框，高度失效----设置 overflow 属性
+		d、外边距问题：子元素和父元素之间，子元素有 margin-top，父元素没有设置边框的时候，外边距变成了 父元素的外边距
+			解决1：为 父元素 加边框；如果不希望显示边框，将边框的颜色设置为 transparent
+			解决2：修改为 父元素的 内边距
+	
+	2、各种模式： <!DOCTYPE HTML>
+
+	3、IE 浏览器特定的问题
+		属性前缀
+		选择器前缀
+		条件 <!--  if  -->
+
+十五：转换
+	1、什么是转换：为元素使用 transform 属性，实现元素的位移、旋转、缩放、倾斜
+	2、transform 属性的取值，为，各种转换函数
+		transform-origin:;----》配合transform使用，设置转换的原点位置（默认在元素的中心点），数值/百分比/关键字
+	3、2D、3D
+	4、2D 效果
+		a、位移函数   translate(x,y)/translateX()/translateY()
+		b、缩放函数  scale(x/y)  scale(x,y) scaleX()  scaleY()
+		c、旋转函数  rotate(number deg)----默认按照顺时针，给予负数按照逆时针
+		d、倾斜函数  skew(x/y) skey(x,y)  skewX() skewY()
+	
+	5、3D效果
+		a、视点：距离屏幕的距离
+			perspective:;----》定义给其父元素
+
+		b、旋转
+			rotateX()  rotateY() rotateZ()  rotate3d(x,y,z,deg)
+
+十六：过渡----》模拟简单的动画效果
+	1、transition:样式属性  持续时间   动画效果   延迟时间;  ----》定义某个样式属性如何完成变化
+	2、过渡效果何时触发？------样式属性的值发生了变化
+		状态相关、js 代码触发
+	3、哪些属性可以用于过渡？？
+		a、转换
+		b、取值为颜色：背景色、文本色
+		c、尺寸
+	4、动画效果：函数
+	5、单个定义
+		transition-property：样式属性的名称;
+		transition-duration: value;---》单位 为 ms 或者 s
+		transition-timing-function:效果函数；--->默认值 ease、linear
+		transition-delay:value;-->单位为ms或者s
+	6、如何实现多个过渡效果？
+		a、transition:width 2s ease 0s,transform 4s linear 1s;
+		b、transition-property:width,background;
+
+十七：动画
+	1、定义
+		@keyframes  名称
+		{
+			from|0%{样式}
+			n%{样式}
+			to|100%{样式}
+		}
+		
+	2、播放
+		选择器{
+			animation:名称  时间;
+		}
+
+	3、动画子属性
+		animation-name：；
+		animation-duration:;---持续时间
+		animation-timing-function:ease/linear/..;
+		animation-delay:;
+		animation-iteration-count:number/infinite;
+		animation-direction:;
+		animation-fill-mode:;--->模式
+
+	4、浏览器兼容问题
+	        定义
+		@-o-keyframes name
+		@-moz-keyframes name
+		@-webkit-keyframes name
+	       调用
+		-webkit-animation:
+		-webkit-animation-fill-mode:;
+
+十八：CSS 优化
+	1、什么是优化：减少服务器的压力，缩短的响应时间，体验度好
+	2、优化的原则
+		a、尽量减少 HTTP 请求的个数：减少图片的个数
+		b、页面的头部引入 CSS 文件
+		c、将引用的 CSS 和 js，放入单独的文件中，由页面引用
+		d、代码优化：
+			使用简写、分组/群组、先后顺序（利用继承）
+p,ul,li,h1,h2,h3{margin:0;padding:0;}			
+
+	3、借助工具
+
+
+
+		
+
+
