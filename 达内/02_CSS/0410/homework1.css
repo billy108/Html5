@@ -1,0 +1,43 @@
+div{
+	width:300px;
+	height:200px;
+	border:1px solid #000;
+	background:#eee;
+	line-height:200px;
+	position:relative;
+}
+img{
+	visibility:hidden;
+}
+@keyframes cic{
+	0%{top:0px;left:0px;visibility:visible;}
+	50%{top:183px;left:75px;visibility:visible;transform:scale(0.5,0.5);}
+	100%{top:100px;left:120px;visibility:visible;transform:scale(0,0);}
+}
+#cic{
+	position:absolute;
+	animation:cic 1s;
+}
+@keyframes sf{
+	0%{visibility:visible;transform:scale(0,0);}
+	100%{visibility:visible;}
+}
+#sf{
+	position:absolute;
+	animation:sf 1s;
+	animation-delay:1s;
+	top:80px;
+	left:100px;
+}
+@keyframes red{
+	0%{visibility:visible;opacity:0;}
+	100%{visibility:visible;opacity:1;}
+}
+#red{
+	position:absolute;
+	animation:red 1s;
+	animation-delay:2s;
+	animation-fill-mode:forwards;
+	top:80px;
+	left:100px;
+}
