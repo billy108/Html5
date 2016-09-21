@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <mete http-equiv="content-type" content="text/html;charset=utf-8"/>
+  <style type="text/css">
+   div{
+    width:100px;
+	height:100px;
+	border:1px solid black;
+	background:#ccc;
+   }
+   #d1{
+    transform:translate(90px,90px) scale(0.7);
+   }
+	#d2{
+	 width:300px;
+	 height:300px;
+	 position:relative;
+	}
+	img{
+	 position:absolute;
+	 visibility:hidden;
+	 top:20px;
+	 left:20px;
+	}
+	img:target{
+	 visibility:visible;
+	}
+	#img1:target{
+	 transform:scale(1.5);
+	}
+	#img2:target{
+	 transform:scale(0.5);
+	}
+	#img3:target{
+	 transform:rotate(-90deg);
+	 }
+	#img4:target{
+	 transform:rotate(90deg);
+	}
+	#father{
+	 perspective:100;
+	 -webkit-perspective:100;
+	}
+	#d22{
+	 margin:100px;
+	 transform:rotateX(45deg);
+	}
+	#d3{
+	 transition:width 3s linear 0s,
+		background-color 2s ease 0s,
+		transform 2s linear 0s;
+	}
+	#d3:hover{
+	 width:500px;
+	 background-color:red;
+	 transform:rotate(90deg);
+	}
+	@keyframes change{
+		from{
+			background:green;
+		}
+		40%{
+			background:red;
+		}
+		to{
+			background:blue;
+		}
+	}
+	#d4{
+		animation:change 5s;
+	}
+  </style>
+ </head>
+ <body>
+  <div id="d4"></div>
+  <div id="d3">
+  </div>
+  <br/><br/>
+  <div id="father">
+   <div id="d22">HELLO</div>
+  </div>
+  <br/><br/>
+  <div>广西</div>
+  <div id="d1">贵州</div>
+ </body>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+ <p>
+  <a href="#img1">放大</a>
+  <a href="#img2">缩小</a>
+  <a href="#img3">左转</a>
+  <a href="#img4">右转</a>
+ </p>
+ <div id="d2">
+  <img id="img1" src="images/jd_logo.png"/>
+  <img id="img2" src="images/jd_logo.png"/>
+  <img id="img3" src="images/jd_logo.png"/>
+  <img id="img4" src="images/jd_logo.png"/>
+ </div>
+</html>
