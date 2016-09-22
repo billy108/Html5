@@ -1,3 +1,26 @@
-body{
-	background:red;
+/*基础CSS设定*/
+*{margin:0;padding:0;}
+a{text-decoration:none;}
+ul,ol,li{list-style-type:none;}
+body{font-size:12px;font-color:#666;}
+input{outline:0;}
+.lt{float:left;}
+.rt{float:right;}
+.clr{clear:both;}
+/*整体布局块*/
+#topBar,#logoBar,#menuBar{
+	width:1210px;
+	margin:0 auto;
+}
+#topBar{
+	background:#afa;
+	height:50px;
+}
+#logoBar{
+	background:#aaf;
+	height:80px;
+}
+#menuBar{
+	background:#faa;
+	height:60px;
 }
