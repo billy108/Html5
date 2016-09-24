@@ -1,0 +1,81 @@
+/*基础CSS设定*/
+*{margin:0;padding:0;}
+a{text-decoration:none;color:#666;}
+a:hover{text-decoration:underline;color:#ff0700;}
+ul,ol,li{list-style-type:none;}
+body{font-size:12px;font-color:#666;font-family:"微软雅黑"}
+input{outline:0;}
+.lt{float:left;}
+.rt{float:right;}
+.clr{clear:both;}
+/*整体布局块*/
+#topBar,#logoBar,#menuBar,#main,#mayLike,#recentView,#serviceItems,#footer{
+	width:1210px;
+	margin:0 auto;
+}
+#topBarContainer{
+	width:100%;
+	background:#F7F7F7;
+	height:30px;
+	border-bottom:1px solid #eee;
+}
+#topBar{
+	height:30px;
+	line-height:30px;
+}
+#topBar>ul>li{
+	float:left;
+}
+#topBar li b{
+	border:1.5px solid #ddd;
+	margin:0 10px;
+	height:1em;
+	display:inline-block;
+	vertical-align:middle;
+}
+#memClub{
+	background:url(images/vip.jpg) left 3px no-repeat;
+	padding-left:25px;
+}
+#entchannel{
+	background:url(images/dakehu.jpg) left 3px no-repeat;
+	padding-left:25px;
+}
+#customerService{
+	display:inline-block;
+}
+#customerService ul{
+	position:absolute;
+	width:50px;
+	line-height:20px;
+	background:#fff;
+	display:none;
+}
+#logoBar{
+	background:#aaf;
+	height:80px;
+}
+#menuBar{
+	background:#faa;
+	height:60px;
+}
+#main{
+	background:#faf;
+	height:100px;
+}
+#mayLike{
+	background:#ffa;
+	height:50px;
+}
+#recentView{
+	background:#aff;
+	height:50px;
+}
+#serviceItems{
+	background:#afa;
+	height:50px;
+}
+#footer{
+	background:#faf;
+	height:50px;
+}
