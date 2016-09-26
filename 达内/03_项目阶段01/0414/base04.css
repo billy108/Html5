@@ -74,6 +74,7 @@ input{outline:0;}
 #customerService{
 	display:inline-block;
 	position:relative;
+	z-index:4;
 }
 #customerService>a{
 	padding:3px 15px 3px 3px;
@@ -139,13 +140,64 @@ input{outline:0;}
 }
 #myBox{
 	float:right;
+	position:relative;
 }
 #myJD{
 	margin-right:12px;
+	position:relative;
+	z-index:3;
+}
+#shoppingCar{
+	position:relative;
+	z-index:3;
+}
+#myJDBox{
+	width:300px;
+	height:150px;
+	background:#F7F7F7;
+	border:1px solid #ccc;
+	position:absolute;
+	left: -195px;
+	top: 42px;
+	display:none;
 }
 #menuBar{
-	background:#faa;
-	height:60px;
+	background:#E43B3E;
+	height:40px;
+	color:#fff;
+	position:relative;
+}
+#allCate{
+	width:210px;
+	float:left;
+	font-size:14px;
+	padding:11px 8px 10px 20px;
+	background:#CD2A2C url(images/jtr.jpg) no-repeat 218px 17px;
+}
+#categroy{
+	background:#fff;
+	width:230px;
+	height:180px;
+	position:absolute;
+	top:40px;
+	
+}
+#menuTop{
+	float:left;
+}
+#menuTop li{
+	float:left;
+	height:40px;
+	font-size:14px;
+	line-height:40px;
+	padding-left:26px;
+	padding-right:26px;
+}
+#menuTop li:hover{
+	background:#CD2A2C;
+}
+#menuTop li a{
+	color:#fff;
 }
 #main{
 	background:#faf;
