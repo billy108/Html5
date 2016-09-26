@@ -1,0 +1,169 @@
+/*»ù´¡CSSÉè¶¨*/
+*{margin:0;padding:0;}
+a{text-decoration:none;color:#666;}
+a:hover{text-decoration:underline;color:#ff0700;}
+ul,ol,li{list-style-type:none;}
+body{font-size:12px;font-color:#666;font-family:"Î¢ÈíÑÅºÚ"}
+input{outline:0;}
+.lt{float:left;}
+.rt{float:right;}
+.clr{clear:both;}
+/*ÕûÌå²¼¾Ö¿é*/
+#topBar,#logoBar,#menuBar,#main,#mayLike,#recentView,#serviceItems,#footer{
+	width:1210px;
+	margin:0 auto;
+}
+#topBarContainer{
+	width:100%;
+	background:#F7F7F7;
+	height:30px;
+	border-bottom:1px solid #eee;
+}
+#topBar{
+	height:30px;
+	line-height:30px;
+}
+#topBar>ul>li{
+	float:left;
+}
+#topBar li b{
+	border:1.5px solid #ddd;
+	margin:0 10px;
+	height:1em;
+	display:inline-block;
+	vertical-align:middle;
+}
+#memClub{
+	background:url(images/vip.jpg) left 3px no-repeat;
+	padding-left:25px;
+}
+#entchannel{
+	background:url(images/dakehu.jpg) left 3px no-repeat;
+	padding-left:25px;
+}
+#mobileJD{
+	display:inline-block;
+	position:relative;
+}
+#mobileJDParent{
+	position:relative;
+	z-index:5;
+	border:1px solid transparent;
+	display:inline-block;
+	line-height:23px;
+	padding-left:22px;
+	background:url(images/iconlist_2.png) -126px -359px no-repeat;
+}
+#mobileJDTag{
+	padding-right:15px;
+	background:url(images/jt_down.jpg) right center no-repeat;
+}
+#mobileJDItems{
+	position:absolute;
+	width:230px;
+	line-height:20px;
+	background:#fff;
+	display:none;
+	box-shadow:0 0 6px #eee;
+	border:1px solid #ccc;
+	top:26px;
+	border-top:0;
+	padding-left:3px;
+	z-index:4;
+}
+#customerService{
+	display:inline-block;
+	position:relative;
+}
+#customerService>a{
+	padding:3px 15px 3px 3px;
+	border:1px solid transparent;
+	border-bottom:0;
+	background:url(images/jt_down.jpg) right center no-repeat;
+}
+#customerService ul{
+	position:absolute;
+	width:63px;
+	line-height:20px;
+	background:#fff;
+	display:none;
+	box-shadow:0 0 6px #eee;
+	border:1px solid #ccc;
+	top:25px;
+	border-top:0;
+	padding-left:3px;
+}
+#logoBar{
+	height:60px;
+	padding:15px 0;
+}
+#logoBar>a{
+	float:left;
+}
+#searchContainer{
+	float:left;
+	margin-left:60px;
+}
+#searchBar{
+	border:3px solid #e4393c;
+	width:495px;
+	height:30px;
+	background:#e4393c;
+}
+#kw{
+	padding:8px 6px;
+	height:14px;
+	border:none;
+	font-size:14px;
+	width:403px;
+	font-family:'Î¢ÈíÑÅºÚ';
+	color:#666;
+}
+#btSearch{
+	border:none;
+	background:transparent;
+	width:80px;
+	height:30px;
+	font-size:14px;
+	color:#fff;
+	font-family:'Î¢ÈíÑÅºÚ';
+	cursor:pointer;
+}
+#searchContainer ul li{
+	float:left;
+	margin:5px;
+}
+#searchContainer ul li a:hover
+{
+	color:#666;
+}
+#myBox{
+	float:right;
+}
+#myJD{
+	margin-right:12px;
+}
+#menuBar{
+	background:#faa;
+	height:60px;
+}
+#main{
+	background:#faf;
+	height:100px;
+}
+#mayLike{
+	background:#ffa;
+	height:50px;
+}
+#recentView{
+	background:#aff;
+	height:50px;
+}
+#serviceItems{
+	background:#afa;
+	height:50px;
+}
+#footer{
+	background:#faf;
+	height:50px;
+}
