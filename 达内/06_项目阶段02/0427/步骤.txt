@@ -1,0 +1,5 @@
+1、打开之前做好的详情页，删除内容部分，留下头部与底部
+2、将左侧弹出菜单的html代码拷贝到准备好的id为content_1的div中
+3、修改css样式，去掉左侧菜单的display:none、position:absolute
+
+设置display为table(inline-table)，可以解决元素无法随着内容自动扩展高度的问题，并且这种解决方式比overflow:hidden更安全。同时，也适用于不能设置overflow:hidden的元素
