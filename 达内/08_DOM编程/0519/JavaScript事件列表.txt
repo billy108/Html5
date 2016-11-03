@@ -1,0 +1,77 @@
+onabort 当用户中断下载图像时触发。
+onactivate 当对象设置为活动元素时触发。
+onafterprint 对象所关联的文档打印或打印预览后立即在对象上触发。
+onafterupdate 当成功更新数据源对象中的关联对象后在数据绑定对象上触发。
+onbeforeactivate new 对象要被设置为当前元素前立即触发。
+onbeforecopy 当选中区复制到系统剪贴板之前在源对象触发。
+onbeforecut 当选中区从文档中删除之前在源对象触发。
+onbeforedeactivate 在 activeElement 从当前对象变为父文档其它对象之前立即触发。
+onbeforeeditfocus 在包含于可编辑元素内的对象进入用户界面激活状态前或可编辑容器变成控件选中区前触发。
+onbeforepaste 在选中区从系统剪贴板粘贴到文档前在目标对象上触发。
+onbeforeprint 对象的关联文档打印或打印预览前在对象上触发。
+onbeforeunload 在页面将要被卸载前触发。
+onbeforeupdate 当成功更新数据源对象中的关联对象前在数据绑定对象上触发。
+onblur 在对象失去输入焦点时触发。
+onbounce 当 marquee 对象的 behavior 属性设置为“alternate”且字幕的内容到达窗口一边时触发。
+oncellchange 在数据供应者中的数据变更时触发。
+onchange 当对象或选中区的内容改变时触发。
+onclick 在用户用鼠标左键单击对象时触发。
+oncontextmenu 在用户使用鼠标右键单击客户区打开上下文菜单时触发。
+oncontrolselect 当用户将要对该对象制作一个控件选中区时触发。
+oncopy 当用户复制对象或选中区，将其添加到系统剪贴板上时在源元素上触发。
+oncut 当对象或选中区从文档中删除并添加到系统剪贴板上时在源元素上触发。
+ondataavailable 每当异步传输数据的数据源对象的数据到达时触发。
+ondatasetchanged 当数据源对象对应的数据集发生变更时触发。
+ondatasetcomplete 触发就表明数据源对象所有数据都可用。
+ondblclick 当用户双击对象时触发。
+ondeactivate 当 activeElement 从当前对象变为父文档其它对象时触发。
+ondrag 当进行拖曳操作时在源对象上持续触发。
+ondragend 当用户在拖曳操作结束后释放鼠标时在源对象上触发。
+ondragenter 当用户拖曳对象到一个合法拖曳目标时在目标元素上触发。
+ondragleave 当用户在拖曳操作过程中将鼠标移出合法拖曳目标时在目标对象上触发。
+ondragover 当用户拖曳对象划过合法拖曳目标时持续在目标元素上触发。
+ondragstart 当用户开始拖曳文本选中区或选中对象时在源对象上触发。
+ondrop 当鼠标按钮在拖曳操作过程中释放时在目标对象上触发。
+onerror 当对象装载过程中发生错误时触发。
+onerrorupdate 更新数据源对象中的关联数据出错时在数据绑定对象上触发。
+onfilterchange 当可视滤镜更改状态或完成转换时触发。
+onfinish 当字幕循环完成后触发。
+onfocus 当对象获得焦点时触发。
+onfocusin new 当元素将要被设置为焦点之前触发。
+onfocusout new 在移动焦点到其它元素之后立即触发于当前拥有焦点的元素上触发。
+onhelp 当用户在浏览器为当前窗口时按 F1 键时触发。
+onkeydown 当用户按下键盘按键时触发。
+onkeypress 当用户按下字面键时触发。
+onkeyup 当用户释放键盘按键时触发。
+onlayoutcomplete 当打印或打印预览版面处理完成用来自于源文档的内容填充当前 LayoutRect 对象时触发。
+onload 在浏览器完成对象的装载后立即触发。
+onlosecapture 当对象失去鼠标捕捉时触发。
+onmousedown 当用户用任何鼠标按钮单击对象时触发。
+onmouseenter 当用户将鼠标指针移动到对象内时触发。
+onmouseleave 当用户将鼠标指针移出对象边界时触发。
+onmousemove 当用户将鼠标划过对象时触发。
+onmouseout 当用户将鼠标指针移出对象边界时触发。
+onmouseover 当用户将鼠标指针移动到对象内时触发。
+onmouseup 当用户在鼠标位于对象之上时释放鼠标按钮时触发。
+onmousewheel new 当鼠标滚轮按钮旋转时触发。
+onmove 当对象移动时触发。
+onmoveend 当对象停止移动时触发。
+onmovestart 当对象开始移动时触发。
+onpaste 当用户粘贴数据以便从系统剪贴板向文档传送数据时在目标对象上触发。
+onpropertychange 当在对象上发生对象上发生属性更改时触发。
+onreadystatechange 当对象状态变更时触发。
+onreset 当用户重置表单时触发。
+onresize 当对象的大小将要改变时触发。
+onresizeend 当用户更改完控件选中区中对象的尺寸时触发。
+onresizestart 当用户开始更改控件选中区中对象的尺寸时触发。
+onrowenter 触发就表明当前行已经在数据源中更改，对象上有可用的新数据值。
+onrowexit 当数据源控件更改对象当前行前触发。
+onrowsdelete 当行将要从记录集中被删除时触发。
+onrowsinserted 当在当前记录集中插入新行后触发。
+onscroll 当用户滚动对象的滚动条时触发。
+onselect 当当前选中区改变时触发。
+onselectionchange 当文档的选中状态改变时触发。
+onselectstart 对象将要被选中时触发。
+onstart 在 marquee 对象的每次循环开始时触发。
+onstop 当用户单击停止按钮或离开 Web 页面时触发。
+onsubmit 当表单将要被提交时触发。
