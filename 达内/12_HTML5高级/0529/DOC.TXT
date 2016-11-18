@@ -1,0 +1,30 @@
+赵旭
+zhaoxu@tarena.com.cn
+
+HTML5CORE
+PROJECT
+JQUERY
+AJAX
+PROJECT
+
+HTML5CORE
+1、Form API
+2、媒体(视频、音频 ) API
+3、Canvas
+4、拖拽相关API  离线存储API
+5、Geolocation API
+      Baidu Geolocation
+      Baidu Map
+
+
+
+1、练习1 ： 通过三个滑块选取颜色数值，并且显示在div的背景上
+   step 1：由于获取出来的数值都是0-255，赋值方式 rgb(255,255,255), div.style.backgroundColor=rgb(255,255,255)
+   step 2 : 让三个滑块执行同一事件 ， 事件中，获取三个滑块的值，构建成  rgb(v1,v2,v3)
+
+   css颜色组成:
+      1、red
+      2、#112233
+      3、rgb(0-255,0-255,0-255) 通过rgb来指定颜色
+      4、rgba(0-255,0-255,0-255,0-1) 通过rgb以及alpha指定颜色
+
