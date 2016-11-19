@@ -1,0 +1,153 @@
+1、新表单元素
+      全部都是由input标签组成
+      1.1 email
+      1.2 url
+            注意：输入的内容必须以http://
+      1.3 search
+      1.4 range
+            范围
+	    属性:
+	         min : 最小值
+		 max : 最大值
+		 step : 步长
+		 value : 值
+      1.5 number
+            属性:
+	         min : 最小值
+		 max : 最大值
+		 step : 步长
+		 value : 值
+      1.6 color
+            通过windows的调色板选取颜色
+
+      1.7 date
+            弹出日历控件，选择年月日
+	    值:2015-06-01
+      1.8 month
+            2015-06
+      1.9 week
+            2015-W13
+      1.10 datetime
+            2015-06-01T01:15Z
+      1.11 datetime-local
+
+2、新表单属性
+     2.1 required
+           必须的，非空验证
+	   <input type="text" required="false" />
+     2.2 multiple
+           在一个表单元素中，允许录入多段类型相同的数据，但必须由","作为分隔符
+     2.3 pattern 
+           根据用户指定的正则表达式，对数据进行验证
+     2.4 autofocus
+           自动获取焦点
+     2.5 form 
+           在表单之外，提交表单元素
+	   <form id="frm"></form>
+	   <input type="text" form="frm" />
+     2.6 placeholder
+           网页加载时，表单元素上会默认显示一段文字
+	   注意：只有在用户录入数据时，placeholder的值才会消失
+3、新表单元素（显示数据）
+     3.1 datalist
+           构建一个数据列表，可以提供给文本框类型的控件使用
+	   <option value="">Display</option>
+	   <option value="" label="Display" />
+
+	   与datalist相关联：
+	   <input type="text" list="datalistId" />
+     3.2 progress
+           进度条控件
+	   max : 进度完成后的值
+	   value : 当前的进度值
+	   注意：多数情况下要与 setInterval 或 setTimeout联用
+     3.3 meter
+           刻度表
+	   min ：设置整个刻度的下限值
+	   max
+	   value
+	   low : 设定合理范围下限值，大于等于min
+	   high ： 设定合理范围上限值，小于等于 max
+	   optimum ： 设置最佳位置值
+     3.4 output
+           用于显示表单元素间所计算得到的值
+	   for:关联相互计算的控件id值
+	   value ： 显示的值
+
+	   Application Programming Interface
+
+======================================
+1、setCustomValidity();  
+     语法: input.setCustomValidity("错误消息");
+
+     一旦设置了错误消息，表单时不允许被提交的。
+     如果想清除错误消息(清除错误):input.setCustomValidity("")
+
+练习1：
+   打开上次课的上机练习，完成以下功能
+   1、如果用户名称为空的话，给出提示，请输入用户名称，并且阻止表单提交
+   2、验证  密码以及验证密码，如果两个密码不一致，在验证密码处给出提示， 两次输入的密码必须一致 ，并且阻止表单提交
+   3、如果没有问题（输入的时候没有错误、用户改正了错误），允许表单被提交
+   通过setCustomValidity()完成
+
+
+完成步骤：
+1、初始化网页时，为 用户名称 设置错误消息
+     初始化网页:window.onload = function(){}
+     用户名称: name : loginname , document.forms[0].loginname
+2、清空 “用户名称”错误消息
+     当鼠标离开时(blur)，检查用户名称数据，如果不为空 ， 清空错误消息
+
+3、处理  验证密码  的onblur事件
+      密码  和  验证密码的值是否一致，
+      不一致  setCustomValidity(“两次密码必须一致”)
+      否则 ， 清空错误消息
+
+绑定事件：
+1、<input  onclick="text_click()" />
+2、<script>
+         element.onclick = function(){
+		
+	 }
+     </script>
+3、addEventListener();
+      element.addEventListener("事件类型",fnName,boolean);
+      boolean : true , 在事件捕获中处理事件
+                       false , 在事件冒泡中处理事件
+
+
+增加电话号码文本框：通过pattern属性约束格式，13*********，并且不能为空
+鼠标离开时进行验证，
+1、如果为空 ， 必须输入电话号码
+2、如果数据格式不符合pattern，提示，请输入正确格式的电话号码
+
+
+
+1、form表单属性 novalidate
+      取消表单中所有元素的验证操作
+      <form novalidate>
+	<input required />
+      </form>
+
+form表单练习:
+1、所有的必填项目，如果为空的话，给出相应的提示
+2、用户名称 ： 
+     1、由字母数字下划线组成
+     2、5-16 位
+     如有违反，给出相应提示
+     并且表单不能被提交。
+     通过表单的checkValidity()来决定表单是否需要被提交
+3、用户密码
+      6-16位  字母数字组成（符号）
+      如有违反，给出相应提示，并且不能提交表单
+4、重复密码
+      必须与上面密码保持一致，否则给出提示
+5、Email地址，格式必须正确
+
+
+1、elem.validity.valueMissing
+<input type="text" id="elem" required />
+2、setCustomValidity("")
+
+
+             
