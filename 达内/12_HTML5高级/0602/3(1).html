@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>  </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <style type="text/css">
+	#player{
+		width:700px;
+		margin:20px auto;
+		padding:5px;
+		background:#999999;
+		border:1px solid #666666;
+		border-radius:5px;
+	}
+	#media{margin:0px;padding:0px;}
+	nav{margin:5px 0px;}
+	#buttons{float:left;}
+	button{
+		width:50px;
+	}
+	#bar{
+		float:left;
+		width:600px;
+		height:16px;
+		padding:2px;
+		border:1px solid #ccc;
+		background:#eee;
+		margin-left:25px;
+	}
+
+	#progress{
+		width:0px;
+		height:16px;
+		background:rgba(0,0,150,0.2);
+	}
+  </style>
+  <script>
+    var loop;
+	function $(id){
+		return document.getElementById(id);
+	}
+	/**初始化**/
+	function initial(){
+		//1、获取 id为btn的元素
+		var btn = $("btn");
+		var media = $("media"); //获取media
+		var bar = $("bar");
+		//2、绑定事件
+		btn.addEventListener("click",btn_click,false);
+		media.addEventListener("ended",media_ended,false);
+		bar.addEventListener("click",bar_click,false);
+	}
+	/**鼠标单击bar时的事件**/
+	function bar_click(e){
+		//console.log("距离:"+e.offsetX);
+		var progress = $("progress");
+		progress.style.width = e.offsetX + "px";//设置progress的宽度为鼠标点击的bar的位置宽度
+		var media = $("media");
+		//计算currentTime
+		var currentTime = e.offsetX / 600 * media.duration;
+		media.currentTime = currentTime;
+	}
+
+	/**视频播放结束后的事件*/
+	function media_ended(){
+		$("btn").innerHTML = "Play";
+		clearInterval(loop);
+		$("progress").style.width = "0px";
+	}
+	/**更新滚动条的位置*/
+	function updateStatus(){
+		var media = $("media");
+		var progress = $("progress");
+		var size = media.currentTime / media.duration * 600;
+		$("progress").style.width = size + "px";
+	}
+
+	/**Play/Pause 按钮单击事件**/
+	function btn_click(){
+		//1、获取media
+		var media = $("media");
+		//2、根据不同状态切换视频 播放/暂停
+		if(!media.ended && !media.paused){
+			//正在播放中，需要暂停视频，按钮的文字变成Play
+			media.pause();
+			this.innerHTML = "Play";
+			clearInterval(loop);
+		}else{
+			//正在暂停(停止)中，播放视频，按钮的文字变成Pause
+			media.play();
+			loop = setInterval("updateStatus()",1000);
+			this.innerHTML = "Pause";
+		}
+	}
+	window.addEventListener("load",initial,false);
+  </script>
+ </head>
+
+ <body>
+	<section id="player">
+		<video id="media" width="700" src="source/video.mp4"></video>
+		<nav>
+			<div id="buttons">
+				<button id="btn">Play</button>
+			</div>
+			<div id="bar">
+				<div id="progress"></div>
+			</div>
+			<div style="clear:both;"></div>
+		</nav>
+	</section>
+ </body>
+</html>
