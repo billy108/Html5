@@ -1,0 +1,41 @@
+1、伪类顺序
+      lvha 
+
+      a:link{}
+      a:visited{}
+      a:hover{}
+      a:active{}
+
+2、<a href="javascript:playMusic('小苹果','music/1.mp3')">小苹果</a>
+3、当歌曲能够播放时，将时长显示在 00:00处
+      canplaythrough 事件
+
+      事件 : 行为
+      方法 : 操作
+      属性 : 状态
+ 4、325秒  5:25
+
+       parseInt(325  / 60) : 5
+       325 - （5*60） ： 25  ===》  325 % 60 = 25
+       判断秒 ： num % 60 
+       判断奇偶性 : num % 2 == 0
+       判断是几的倍数 : num % 几 == 0
+       取最后一位 : num % 10 = 最后一位
+
+ ===================================
+1、
+    添加 <canvas>标签
+    在js中  获取 canvas的上下文 getContext()
+    绘制图形
+
+2、
+    var gra = ctx.createLineraGradient(0,150,400,150);
+    gra.addColorStop(0,"red");
+    gra.addColorStop(0.2,"yellow");
+    gra.addColorStop(1,"blue");
+3、canvas的默认原点为(0,0)
+     ctx.translate(25,25)  : 原点则为 (25,25)
+     ctx.fillRect(0,0,100,100);实际显示效果 从 (25,25)开始显示
+     ctx.translate(25,25)  : 原点则为 (50,50)
+
+      
