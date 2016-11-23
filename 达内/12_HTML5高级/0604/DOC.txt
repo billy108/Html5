@@ -1,0 +1,30 @@
+1、文本
+     1.1 属性 
+           font ="font-weight font-style font-size font-family"
+	   font="Verdana"
+	   font="bold italic 24px Verdana"
+2、dataTransfer
+      2.1 作用
+            保存拖拽过程中所涉及到的数据
+	    常用场合：
+	        源元素 ，保存数据到dataTransfer中
+		目标元素 ，从dataTransfer中获取数据
+     2.2 如何获取dataTransfer
+           在事件中通过事件参数  event.dataTransfer属性来获取
+	   拖拽过程中所涉及的7个事件，都能够获取dataTransfer
+	   常用事件:
+	   dragstart、drop
+    2.3 如何使用dataTransfer
+          setData(type,data)
+	  getData(type)
+	  clearData(type)
+	  type:所涉及到的文本的类型，固定值：text
+3、传递数据
+     源元素：拼 file:///xxxxxx.gif;e.pageX;e.pageY 字符串
+
+      file:///E:/%E8%B5%B5%E6%97%AD/HTML5CORE/Day05/EXERCISE/img/monster2.gif;83;82
+     目标元素: var info = e.dataTransfer.getData("text");
+     var infos = info.split(";");
+     infos[0] : 图像路径
+     infos[1] : pageX
+     infos[2] : pageY
