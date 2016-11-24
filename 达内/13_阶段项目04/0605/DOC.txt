@@ -1,0 +1,16 @@
+1、geolocation
+     navigator.geolocation.getCurrentPosition(success_callback,error_callback);
+     
+     function error_callback(error){
+	// error 为自动传入
+	//获取位置失败后的操作
+	error.code ;//获取错误编号
+	error.message; //获取错误的详细信息
+     }
+
+     function success_callback(){
+	//获取位置成功后的操作
+     }
+
+2、百度地图API 
+      http://developer.baidu.com/map/
