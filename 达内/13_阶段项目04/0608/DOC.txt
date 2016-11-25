@@ -1,0 +1,163 @@
+1、绘制STARTING
+      1.1  创建四副图像
+              将所有图像保存进一个  loading 的数组中,数组类型为Image 
+      1.2  数据对象：LOADING
+             属性:
+		frames : 用到的四副图数组
+		width : 图像宽度
+		height: 图像高度
+		speed : 切换图像的速度(以毫秒为单位) 
+      1.3 业务对象 ： Loading
+            属性:
+		frames : 图像
+		width : 宽
+		height : 高
+		x : 0
+		y : HEIGHT - this.height
+		speed : 速度
+		frameIndex : 当前显示图像的索引，默认为 0
+		frame : 当前要显示的图像，通过frameIndex，到frames中得到一幅图
+		lastTime : 上一次执行动画的时间，默认为 0 
+	    方法：
+		step() : 
+		     1、判断时间间隔是否达到speed
+		     2、先通过frameIndex 到 frames取出一幅图，赋给frame
+		     3、frameIndex 自增
+		     4、条件判断,frameIndex == frames.length,state = RUNNING
+		paint(ctx) : 
+		     1、通过ctx 将 frame 画到canvas上，
+		           ctx.drawImage(this.frame,this.x,this.y);
+	1.4 调用
+	      创建 Loading 的对象
+	      在 setInterval(function(){
+		switch(state){
+			....
+			CASE STARTING:
+				.....
+				loading.step();
+				loading.paint(ctx);
+				break;
+		}
+	      },1000);
+
+2、绘制文字到Canvas上
+     2.1  创建drawText方法,用于写 SCORE:0    LIFE:3
+            创建全局变量 :
+	        SCORE : 表示英雄获得的分数，默认为 0 
+		LIFE ： 表示英雄的生命数，默认为 3
+    2.2 通过canvas提供的方法，将文字画在画板上
+          设置文本样式、对齐方式
+	  文本样式：粗体 14px verdana字体
+	  对齐方式 : 
+	                  水平 : left
+			  垂直：hanging
+	  根据不同的横坐标绘制文本
+3、处理 PAUSE -> RUNNING  RUNNING -> PAUSE的转换
+     3.1 注意
+           只有在 RUNNING的状态下，才能切换到PAUSE
+	   在PAUSE的状态下，能够切换到RUNNING
+     3.2 处理事件
+	   RUNNING -> PAUSE : onmouseout
+	   PAUSE -> RUNNING : onmouseover
+     3.3 显示 暂停 图标
+           位置 ： 显示在整个canvas的中间
+	   创建 pause 图像对象 .....
+	   通过一个方法  ： drawPause(ctx) 将图像显示
+     3.4 setInterval
+           case PAUSE:
+	       drawPause(ctx); //绘制 暂停的方法
+	       sky.step();
+	       sky.paint(ctx);
+	       break;
+
+4、英雄的创建
+      4.1  英雄图像列表   var h = [];
+             前两幅图为 正常状态 ： hero1.png hero2.png
+	     后四副图为 爆破状态  :  hero_blowup_n1.png - n4.png
+      4.2  数据对象 var HERO;
+             frames ： 对应的图像列表
+	     width : 宽
+	     height ：高
+	     speed ： 速度 ， 正常状态下，图像切换的速度
+	     baseFrameCount : 基本帧数量，正常状态下的图像数量，当前为  2,同时也能表示播放爆破状态图像的起始帧索引。
+     4.3  业务对象 var Hero
+            属性：
+	        frames:
+		width:
+		height:
+		speed:
+		lastTime : 
+		x: (WIDTH-this.width) / 2
+		y: HEIGHT - this.height;
+		frameIndex:当前显示帧的索引
+		frame:当前显示的图像， 根据frameIndex从frames获取
+		baseFrameCount:基本帧的数量
+		down : 默认为false，是否为爆破状态
+		canDelete : 默认为false,是否允许被删除
+	    方法 :
+		step():
+			根据状态(down)，显示图像
+			if(down){
+				//显示爆破状态图像 
+				this.frameIndex = this.baseFrameCount;
+			}else{
+				// 显示正常的图像
+				//控制 frames的索引范围 在 0或1
+				this.frame = this.frames[this.frameIndex % this.baseFrameCount];
+				this.frameIndex ++;
+			}
+		paint(ctx): 根据frame画英雄到canvas上
+		     ctx.drawImage(this.frame,this.x,this.y);
+     4.4 处理 canvas的  onmousemove事件
+           根据鼠标所在的位置,更新英雄的x,y坐标
+	   x:e.offsetX - 英雄.width / 2
+	   y:e.offsetY - 英雄.height / 2
+5、敌人 Enemy
+        Enemy1 : 小飞机
+	Enemy2 : 中飞机
+	Enemy3 : 大飞机
+     5.1  3个图像数组
+            e1:小飞机的所有图像
+	    e2:中飞机的所有图像
+	    e3:大飞机的所有图像
+     5.2  3个数据对象
+            E1：小飞机的所有数据
+	         width:
+		 height:
+		 frames:
+		 baseFrameCount:1
+		 type:1 , 表示飞机类型 1:小飞机  2:中飞机  3:大飞机
+		 score：表示，击落一架飞机的积分
+		              小飞机：5
+			      中飞机 : 10
+			      打飞机 : 20
+		 life:生命值,被子弹击中一次，life - 1
+		 minSpeed  :  速度下限值30
+		 maxSpeed :  速度上限值50
+		       飞机下降的速度，由minSpeed - maxSpeed中的一个值来决定
+	   E2：中飞机所有的数据
+	          与E1属性相同
+	   E3:大飞机
+		  width:
+		 height:
+		 frames:
+		 baseFrameCount:1
+		 type:1 , 
+		 score：
+		 life:
+		 speed : 100
+	5.3 业务对象 Enemy(config)
+	     属性：
+		  this.speed = 0;
+	          if(config.maxSpeed && config.minSpeed){
+			this.speed = Math.random() * (config.maxSpeed - config.minSpeed) + config.minSpeed;
+		  }else if(config.speed){
+			this.speed = config.speed;
+		  }
+
+		  x : 
+		  y : -this.height
+
+           
+
+	        
