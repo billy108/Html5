@@ -1,0 +1,76 @@
+1、判断相撞规则
+      1.1  Enemy 增加一个函数 hit(c)
+             Comonent : 组件元素，可以是英雄，也可以是子弹
+      1.2  相撞算法
+	     c.x + c.width / 2 >this.x - c.width / 2 &&
+	     c.x + c.width / 2 < this.x + this.width + c.wdith /2 &&
+	     c.y + c.height / 2 > this.y - c.height / 2 &&
+	     c.y + c.height / 2 < this.y + this.height + c.height / 2
+2、添加全局函数 checkHit
+      检查各个组件是否与Enemy碰撞成功
+      2.1 循环遍历每一个敌人
+            2.1.1 用每一个敌人与英雄比较 hit(hero),注意，如果敌人已经是爆破状态，那么就不能进行碰撞
+	    2.1.2 用每一个敌人与每一颗子弹比较
+3、删除子弹
+      3.1 在现有的Bullet中增加属性 canDelete ，默认为false
+            canDelete : 如果为true，表示当前子弹可以被删除，否则不允许被删除
+      3.2 一旦子弹与敌人碰撞成功，当前子弹的canDelete改为true
+      3.3 componentDelete 函数中
+            增加删除子弹的判断条件
+	    if(bullets[i].outOfBounds() || bullets[i].canDelete){
+		.........................................
+	    }
+4、敌人撞击后
+      封装两个属性: 
+         1、down  ： 是否为爆破状态 默认false
+	 2、canDelete ： 是否允许被删除 默认false
+     4.1 由正常状态变为爆破状态
+           封装一个 bang 的方法
+     4.2  bang 
+           4.2.0 将当前飞机的life -- ，如果life == 0  将down改为true
+           4.2.1 将down的值改为true,即将状态改为爆破状态
+	   4.2.2 将当前敌人的 frameIndex 更改为当前的 baseFrameCount
+     4.3 更新 敌人的 step 方法
+           增加 down 的状态判断
+	   如果为false ： 与之前操作一样
+	   如果为true : 
+		根据当前frameIndex的值取出frame
+		frameIndex ++
+	   如果frameIndex == this.frames.length,canDelete改为true
+    4.4 更新 componentDelete 函数 
+          循环遍历敌人操作时，增加一个条件 
+	  for(){
+		if(enemies[i].outOfBounds() || eneimies[i].canDelete){
+			enemies.splice(i,1);
+		}
+	  }
+5、英雄撞击后
+      添加 down属性
+      添加canDelete属性
+      5.1  bang
+	     更改down属性值
+	     将frameIndex 设置为 baseFrameCount
+      5.2 step
+            根据down的值判断是爆破还是正常
+	    显示完成爆破图像后，canDelete 改为true
+      5.3 componentDelete
+            if(hero.canDelete){
+		LIFE --;
+		if(LIFE == 0){
+			GAMEOVER;
+		}else{
+			创建新英雄
+		}
+	    }
+             
+=============================
+
+1、继承
+    function Son(){
+	 Parent.call(this);
+     }
+2、多态
+     对于同一个方法的调用，不同对象会有不同的实现
+
+
+           
