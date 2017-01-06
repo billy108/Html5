@@ -1,0 +1,65 @@
+1.HTML5表单新元素
+
+2.HTML5新API方法
+  1)setCustomValidity( )
+	强制要求在脚本中对元素进行验证;
+	如果元素有效,返回true;
+  2)checkValidity( )
+	自定义错误信息;
+	一旦设置后,在正确的状态下要通过setCustomValidity("")清空错误消息;
+
+3.invalid事件
+  每当用户提交表单时,如果检测到无效域,则触发invalid事件;
+  主要功能是定位到产生错误的元素.
+	1)添加:document.form[0].addEventListener("invalid",form_invalid,true);
+	2)获取产生错误的表单元素:function form_invalid(event){var tar = event.target;}
+
+4.ValidityState属性
+  1)获取:var validityState = domElem.validity;
+  2)ValidityState的验证状态
+	--valid:判断当前元素是否通过所有验证,返回true;其它的状态(属性)返回true,表示没有通过当前验证;
+	--valueMissing:
+	--typeMismatch:
+	--patternMismatch:
+	--stepMismatch;
+	--customError; 
+
+5.HTML5媒体元素
+ video audio
+ <source>与src区别:允许和不允许更换视频
+  
+ -子元素 source
+ -属性:src control autoplay loop poster
+	preload:none meatadata auto
+-事件:
+  progress:更新媒体下载进度
+  canplaythrough:媒体可以顺利播放时触发
+  canplay:只要下载一定可入帧时触发
+  ended pause play error
+-方法:
+  play() pause()
+-属性:
+  paused ended duration currentTime
+
+ 6.Canvas
+   1)HTML中可以绘制图形的区域
+	-fillRect()
+	 -strokeRect()
+	 -clearRect()
+	 -strokeStyle()
+	 -fillStyle()
+   2)画布方法
+	-save()
+	-restore()
+	-scale()
+	-translate()
+	-rotate()
+  3)创建方法
+	var ctx = $("canvas").getContext("2d");
+	ctx.drawImage(img,x,y);
+  4)动态加载动画
+	var img = new Image();
+	img.src = "";
+	img.onload = function(){
+		ctx.drawImage(img,x,y);
+	}
