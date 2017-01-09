@@ -93,4 +93,75 @@
 	setItem(key,value);
 	getItem(key);
 	removeItem(key);
+9.jQuery
+ 1）是js的一个类库，其实就是js
+ 2）主要用来简化js的各种操作以及解决各种浏览器之间的兼容性
+
+10.选择器
+ 1）基本选择器
+ 2）层次选择器
+ 3）过滤选择器
+
+11.jQuery操作DOM
+  查询
+	-html(),text(),val(),attr()
+  创建、插入、删除
+	-append(),prepend(),after(),before()
+	-remove(),empty()
+  复制
+	-clone()
+  样式
+	-attr(),addClass(),removeClass(),toggleClass(),hasClass(),css()
+  遍历
+	-children(),next(),prev(),siblings(),find(),parent()
+
+12.$
+  -$是jQuery的别名，它是jQuery的选择器
+  -释放$
+	-jQuery.noConflict()
+  -释放后如何在加载事件中继续使用$
+	-jQuery(function($){
+	     //这里可以继续使用$
+	     });
+
+13.jQuery事件
+  onload与$(document).ready()区别
+    onload:网页内容都加载完毕时，调用，因为会被覆盖，一般只出现一次，
+    $(document).ready():DOM树加载完毕时调用，可以出现多次
+
+  绑定事件
+	-$obj.bind(事件类型，事件处理函数);
+	-$obj.事件类型(事件处理函数);
+  模拟操作
+	-$obj.trigger("事件类型");
+	  $("#btn").trigger("click");立即激发相关事件
+	-$obj.事件类型();
+
+12.jQuery的数组操作
+  $obj.each(function(index,value){
+	//$obj是一个jQuery数组
+	//index当前遍历出来的元素的索引下标
+	//value当前遍历出来的元素的值
+  });
+  属性：length
+  方法：
+	get() : 转换成DOM数组
+	eq(): 获取index索引所对应的DOM对象
+	index(obj): 返回DOM/jQuery对象在数组中的索引
+  
+13.AJAX
+  异步向服务器提交请求
+  核心
+	XMLHttpRequest，异步提交请求
+  方法：
+	open(method,async):创建请求
+	send():发送请求
+		send(null):get提交方式提交
+		send("name=abc&age=18"):post提交方式
+  属性：
+	readyState:请求状态0~4
+	status:服务器端响应状态，200
+
+
+
 
